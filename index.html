@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AirCanvas AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🎨 AirCanvas AI</h1>
+    <p>Draw anything in the air using your finger!</p>
+
+    <!-- Drawing Area -->
+    <div class="container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="drawCanvas"></canvas>
+        <canvas id="cursorCanvas"></canvas>
+    </div>
+
+    <!-- Status -->
+    <h3 id="status">Loading AI Hand Detection...</h3>
+
+    <!-- Color Palette -->
+    <div class="color-palette">
+        <button class="color-btn"
+            style="background:#a855f7"
+            onclick="changeColor('#a855f7')"></button>
+
+        <button class="color-btn"
+            style="background:#00e5ff"
+            onclick="changeColor('#00e5ff')"></button>
+
+        <button class="color-btn"
+            style="background:#ff3333"
+            onclick="changeColor('#ff3333')"></button>
+
+        <button class="color-btn"
+            style="background:#22c55e"
+            onclick="changeColor('#22c55e')"></button>
+
+        <button class="color-btn"
+            style="background:#ffffff"
+            onclick="changeColor('#ffffff')"></button>
+    </div>
+
+    <!-- Brush Size -->
+    <div class="brush-controls">
+        <label>Brush Size:</label>
+
+        <button onclick="changeBrush(4)">Small</button>
+        <button onclick="changeBrush(8)">Medium</button>
+        <button onclick="changeBrush(14)">Large</button>
+    </div>
+
+    <!-- Pen and Eraser -->
+    <div class="eraser-controls">
+        <button onclick="usePen()">✏️ Pen</button>
+        <button onclick="useEraser()">🧽 Eraser</button>
+    </div>
+
+    <!-- Background Options -->
+    <div class="background-controls">
+        <h3>Background</h3>
+
+        <button onclick="changeBackground('#ffffff')">White</button>
+        <button onclick="changeBackground('#000000')">Black</button>
+        <button onclick="changeBackground('#1e3a8a')">Blue</button>
+        <button onclick="changeBackground('transparent')">
+            Transparent
+        </button>
+    </div>
+
+    <!-- Main Controls -->
+    <div class="controls">
+        <button onclick="clearCanvas()">Clear</button>
+        <button onclick="saveDrawing()">Save Drawing</button>
+        <button onclick="undoDrawing()">↶ Undo</button>
+        <button onclick="redoDrawing()">↷ Redo</button>
+    </div>
+
+    <!-- MediaPipe Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Page */
+body {
+    background: #10101c;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    color: #00e5ff;
+    margin: 15px;
+    font-size: 35px;
+}
+
+p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Drawing Container */
+.container {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    height: 450px;
+    margin: auto;
+    background: #222;
+    border: 2px solid #00e5ff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Video and Canvas */
+video,
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+video {
+    transform: scaleX(-1);
+}
+
+#drawCanvas {
+    z-index: 2;
+}
+
+#cursorCanvas {
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Status */
+#status {
+    color: #00e5ff;
+    margin-top: 15px;
+}
+
+/* All Buttons */
+button {
+    padding: 12px 20px;
+    margin: 8px;
+    background: #00e5ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #00bcd4;
+    transform: scale(1.04);
+}
+
+/* Color Palette */
+.color-palette {
+    margin: 20px;
+}
+
+.color-btn {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Brush Controls */
+.brush-controls {
+    margin: 15px;
+}
+
+.brush-controls button {
+    margin: 5px;
+}
+
+/* Pen and Eraser */
+.eraser-controls {
+    margin: 15px;
+}
+
+/* Background Controls */
+.background-controls {
+    margin: 20px;
+}
+
+.background-controls h3 {
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+/* Main Controls */
+.controls {
+    margin: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    button {
+        padding: 10px 14px;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .color-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
